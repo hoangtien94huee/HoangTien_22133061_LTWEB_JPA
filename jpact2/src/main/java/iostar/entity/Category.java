@@ -15,13 +15,14 @@ import jakarta.persistence.Table;
 @Entity
 @Table(name = "categories")
 
-@NamedQuery(name = "Category.findAll", query = "SELECT c FROM Category c")
+@NamedQuery(name = "Category.findALL", query = "SELECT c FROM Category c")
+	
 public class Category implements Serializable {
 	private static final long serialVersionUID = 1L;
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name = "CategoryId")
-	private int categoryId;
+	private int categoryid;
 	@Column(name = "Categoryname", columnDefinition = "nvarchar(50) NOT NULL")
 	private String categoryname;
 	@Column(name = "Images", columnDefinition = "nvarchar(500) NULL")
@@ -35,12 +36,12 @@ public class Category implements Serializable {
 		super();
 	}
 
-	public int getCategoryId() {
-		return categoryId;
+	public int getCategoryid() {
+		return categoryid;
 	}
 
-	public void setCategoryId(int categoryId) {
-		this.categoryId = categoryId;
+	public void setCategoryId(int categoryid) {
+		this.categoryid = categoryid;
 	}
 
 	public String getCategoryname() {
